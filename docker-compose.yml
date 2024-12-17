@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  frontend:
+    build: ./frontend  # Path to your React Dockerfile
+    ports:
+      - "3000:80"  # Map port 80 of container to 3000 locally
+    depends_on:
+      - backend
+
+  backend:
+    build: ./backend  # Path to your Node.js Dockerfile
+    ports:
+      - "8080:8080"  # Map backend port
+    environment:
+      - REACT_APP_SUPABASE_URL=https://qdtllskaulbxacxobmeh.supabase.co
+      - REACT_APP_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFkdGxsc2thdWxieGFjeG9ibWVoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM1Mzk5MzYsImV4cCI6MjA0OTExNTkzNn0.x-vF181aJNhjHsUfzOrQD58L-GdmmaGXvezWRmCnpv8
