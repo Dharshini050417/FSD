@@ -55,7 +55,7 @@ const Registration = () => {
     if (!validateInputs()) return;
 
     try {
-      const res = await axios.post("http://localhost:8080/register", formData, {
+      const res = await axios.post("https://fsd-1-y5jp.onrender.com/register", formData, {
         headers: { "Content-Type": "application/json" },
       });
 
