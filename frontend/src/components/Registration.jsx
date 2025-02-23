@@ -85,7 +85,7 @@ const Registration = () => {
 
   return (
     <div>
-      <h1 className="header">Employee Registration</h1>
+      <h1 className="header"> Registration</h1>
       <form onSubmit={handleSubmit}>
         <input
           name="name"
